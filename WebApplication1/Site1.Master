@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+  <!DOCTYPE html>
+
+  <html>
+
+  <head runat="server">
+    <title></title>
+
+    <%-- bootstrap css --%>
+      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="bootstrap/css/StyleSheetSet.css" rel="stylesheet" />
+      <%-- datatabels css --%>
+        <link href="DataTabels/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+        <%-- fontawesome css --%>
+          <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+
+          <%-- jquery js --%>
+            <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+            <%-- bootstrap js --%>
+              <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+              <%-- DataTabels js --%>
+                <script src="DataTabels/js/jquery.dataTables.min.js"></script>
+
+
+                <asp:ContentPlaceHolder ID="head" runat="server">
+                </asp:ContentPlaceHolder>
+  </head>
+
+  <body>
+    <form id="form1" runat="server">
+
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+
+          <a class="navbar-brand" href="#">
+            <img class="d-inline-block align-top" src="Icon/shop.png" width="30" height="30" />
+            <asp:Label ID="storeName" CssClass="d-inline-block align-top" runat="server" Text="OnlineShop"></asp:Label>
+          </a>
+
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link " href="Home.aspx">Home</a>
+              </li>
+              
+            </ul>
+
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <asp:LinkButton class=" nav-link " ID="LinkButtonCart" runat="server" OnClick="LinkButtonCart_Click">
+                  <img src="Icon/cart.png" width="20" height="20" />
+                  <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                </asp:LinkButton>
+
+              </li>
+
+              <li class="nav-item dropdown">
+
+                <a class="nav-link dropdown-toggle active" runat="server" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Manager tools
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_cat" OnClick="admin_cat_Click"
+                    runat="server">Category Managment</asp:LinkButton>
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_user" OnClick="admin_user_Click"
+                    runat="server">Users Managment</asp:LinkButton>
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_product" runat="server"
+                    OnClick="admin_product_Click">Product Managment</asp:LinkButton>
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_purchase" runat="server"
+                    OnClick="admin_purchase_Click">Purchase Managment</asp:LinkButton>
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_worker" runat="server"
+                    OnClick="admin_worker_Click">Worker Managment</asp:LinkButton>
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_data" runat="server"
+                    OnClick="admin_data_Click">Data Analyst Managment</asp:LinkButton>
+                  <asp:LinkButton CssClass="dropdown-item text-white" ID="admin_store" runat="server"
+                    OnClick="admin_store_Click">Store Info</asp:LinkButton>
+                </div>
+              </li>
+
+              <li class="nav-item active">
+                <asp:LinkButton class=" nav-link" ID="LinkButtonLogin" runat="server" OnClick="LinkButtonLogin_Click">
+                  Login</asp:LinkButton>
+              </li>
+
+              <li class="nav-item active">
+                <asp:LinkButton class=" nav-link" ID="LinkButtonSign" runat="server" OnClick="LinkButtonSign_Click">Sign
+                  Up</asp:LinkButton>
+              </li>
+
+              <li class="nav-item active">
+                <asp:LinkButton class=" nav-link" ID="LinkButtonLogout" runat="server" OnClick="LinkButtonLogout_Click"
+                  Visible="false">Logout</asp:LinkButton>
+              </li>
+
+              <li class="nav-item active">
+                <asp:LinkButton class=" nav-link" ID="LinkButtonUser" runat="server" OnClick="LinkButtonUser_Click">
+                  Hello</asp:LinkButton>
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+
+
+      <!-- main content -->
+
+      <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+      <!-- /main content -->
+
+      <br />
+      <br />
+
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 col-md">
+            <p class="d-block mb-3 text-muted">&copy All Right Reversed.<a href="#" target="_blank"> Itay</a>
+            </p>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Social</h5>
+            <br />
+            <asp:ImageButton ID="facebook" runat="server" ImageUrl="~/Icon/facebook.png" CssClass="img-fluid"
+              Width="30px" Height="30px" OnClick="facebook_Click" />
+            <asp:ImageButton ID="instagram" runat="server" ImageUrl="~/Icon/instagram.png" CssClass="img-fluid"
+              Width="30px" Height="30px" OnClick="instagram_Click" />
+            <asp:ImageButton ID="twitter" runat="server" ImageUrl="~/Icon/twitter.png" CssClass="img-fluid" Width="30px"
+              Height="30px" OnClick="twitter_Click" />
+
+          </div>
+          <div class="col-6 col-md">
+            <h5>Contact</h5>
+            <ul class="list-unstyled text-small">
+              <li>
+                <asp:Label CssClass="form-control-plaintext" ID="adress_control" runat="server" Text="Label">
+                </asp:Label>
+              </li>
+              <li>
+                <asp:Label CssClass="form-control-plaintext" ID="email_control" runat="server" Text="Label"></asp:Label>
+              </li>
+              <li>
+                <asp:Label CssClass="form-control-plaintext" ID="phone_control" runat="server" Text="Label"></asp:Label>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+  </body>
+
+  </html>

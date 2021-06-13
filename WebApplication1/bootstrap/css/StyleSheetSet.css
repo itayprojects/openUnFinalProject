@@ -1,0 +1,18 @@
+﻿body {
+}
+.carousel-item{
+    height: 32rem;
+    background-position:center;
+    background-size:cover;
+}
+.font-cart{
+    font-size: calc(0.6rem + 0.5vw);
+}
+/*disable arrows in input box*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
