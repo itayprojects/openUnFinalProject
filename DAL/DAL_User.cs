@@ -22,7 +22,7 @@ namespace DAL
 
             try
             {
-                command = "SELECT * FROM Userss";
+                command = "SELECT * FROM Users";
                 cmd = new SqlCommand(command, connect);
                 adapter = new SqlDataAdapter(cmd);
                 connect.Open();

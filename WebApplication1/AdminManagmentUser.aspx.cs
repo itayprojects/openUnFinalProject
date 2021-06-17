@@ -151,7 +151,10 @@ namespace WebApplication1
             if (IsValid)
             {
                 DataTable dt = BllUser.Search(Email.Text.ToString());
-                if (dt.Rows.Count > 0)
+                DataTable pdt = BllUser.SearchById(UserID.Text);
+                string userEmail = pdt.Rows[0]["Email"].ToString();
+
+                if (dt.Rows.Count > 0 && !userEmail.Equals(Email.Text.ToString()))
                 {
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#emailConfirm').modal();", true);
                 }
